@@ -34,13 +34,14 @@ function displayResults(weather) {
     //getting the date
 
     let now = new Date();
-    let date = document.querySelector('.date');
+    let date = document.querySelector('.location .date');
     date.innerText = dateBuilder(now);
 
     //temp
 
     let temp = document.querySelector('.current .temp');
-    temp.innerHTML = `${Math.round(weather['main']['temp'])}<span>°C</span>`;
+    temp.innerHTML = `${Math.round(weather.main.temp)}<span>°C</span>`;
+    console.log(temp);
 
     let weatherEl = document.querySelector('.current .weather');
     weatherEl.innerText = weather.weather[0].main;
